@@ -28,7 +28,7 @@ def clear_instruction(instruction: Tuple[str, str, str]) -> str:
     return next(field for field in instruction if field)
 
 def part2(input: str) -> int:
-    instructions_regex = r"(mul\(\b\d{1,3}\b,\b\d{1,3}\b\))|(don't)|(do)"
+    instructions_regex = r"(mul\(\b\d{1,3}\b,\b\d{1,3}\b\))|(do\(\))|(don't\(\))"
     instructions = re.findall(instructions_regex, input)
 
     should_do = True
@@ -37,9 +37,9 @@ def part2(input: str) -> int:
     for instruction in instructions:
         command = clear_instruction(instruction)
         match command:
-            case 'do':
+            case 'do()':
                 should_do = True
-            case "don't":
+            case "don't()":
                 should_do = False
             case _:
                 if should_do:

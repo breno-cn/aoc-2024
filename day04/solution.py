@@ -66,7 +66,7 @@ def is_xmas(board: List[str]) -> bool:
 
     return (first_diag == 'MAS' or first_diag[::-1] == 'MAS') and (second_diag == 'MAS' or second_diag[::-1] == 'MAS')
 
-def get_board(puzzle: List[str], x: int, y: int) -> int:
+def get_board(puzzle: List[str], x: int, y: int) -> List[List[str]]:
     rows = []
 
     for i in range(3):

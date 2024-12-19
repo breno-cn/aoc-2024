@@ -48,7 +48,7 @@ def get_four_corners(a: Antenna, horizontal_dist: int, vertical_dist: int, board
         if is_coord_valid(i, j, board):
             yield (i, j)
 
-def mark_antinodes(a: Antenna, horizontal_dist: int, vertical_dist: int, board: List[List[str]]) -> Generator[Tuple[int, int]]:
+def mark_antinodes(a: Antenna, horizontal_dist: int, vertical_dist: int, board: List[List[str]]):
     i = a.i + vertical_dist
     j = a.j + horizontal_dist
     while is_coord_valid(i, j, board):
